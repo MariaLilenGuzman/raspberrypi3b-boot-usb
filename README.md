@@ -17,7 +17,7 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 
 ---
 
-## ⚙️ Requisitos
+## Requisitos
 
 - **Raspberry Pi 3B**
 - **Tarjeta microSD** de al menos **16 GB**
