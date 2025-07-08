@@ -7,7 +7,7 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 
 ## 📑 Tabla de contenido
 
-1. [Requisitos](#-requisitos)
+1. [Requisitos](#requisitos)
 2. [Descargar Raspberry Pi OS](#-descargar-raspberry-pi-os)
 3. [Grabar Raspberry Pi OS en la microSD](#-grabar-raspberry-pi-os-en-la-microsd)
 4. [Preparar el disco externo](#-preparar-el-disco-externo)
