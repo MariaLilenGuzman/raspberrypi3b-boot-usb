@@ -49,6 +49,11 @@ En mi caso, descargo la versión para **Windows**.
 3. Inicio la instalación. Si se solicitan configuraciones avanzadas, las dejo en blanco o acepto la configuración por defecto.
 4. Una vez finalizada la grabación, retiro la microSD y la coloco en la Raspberry Pi.
 
+<p align="center">
+  <img src="images/img2.png" alt="captura de pantalla de web" width="550" height="550"/>
+</p>
+
+
 ---
 
 ## Habilitar arranque por USB
