@@ -7,7 +7,7 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 
 ## 📑 Tabla de contenido
 
-1. [Verificar si tu modelo es Raspberry Pi 3B](#verificar-modelo-raspberry-pi)
+1. [Verificar si tu modelo es Raspberry Pi 3B](#verificar-si-tu-modelo-es-raspberry-pi-3b)
 2. [Requisitos](#requisitos)
 3. [Descargar Raspberry Pi OS](#descargar-raspberry-pi-os)
 4. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
