@@ -7,15 +7,34 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 
 ## 📑 Tabla de contenido
 
-1. [Requisitos](#requisitos)
-2. [Descargar Raspberry Pi OS](#descargar-raspberry-pi-os)
-3. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
-4. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
-5. [Clonar la microSD al disco externo](#clonar-la-microsd-al-disco-externo)
-6. [Notas y recomendaciones](#notas-y-recomendaciones)
+1. [Verificar si tu modelo es Raspberry Pi 3B](#verificar-modelo-raspberry-pi)
+2. [Requisitos](#requisitos)
+3. [Descargar Raspberry Pi OS](#descargar-raspberry-pi-os)
+4. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
+5. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
+6. [Clonar la microSD al disco externo](#clonar-la-microsd-al-disco-externo)
+7. [Notas y recomendaciones](#notas-y-recomendaciones)
 
 ---
 
+## Verificar si tu modelo es Raspberry Pi 3B
+
+Abrí una terminal en tu Raspberry Pi y ejecutá:
+
+```bash
+cat /proc/cpuinfo | grep Revision
+```
+Según el código que devuelve la línea Revision, podés identificar tu modelo:
+| Revisión | Modelo                                          |
+| -------- | ----------------------------------------------- |
+| `a02082` | Raspberry Pi 3B                                 |
+| `a22082` | Raspberry Pi 3B                                 |
+| `a020d3` | Raspberry Pi 3B+                                |
+| otros    | Ver lista oficial de revisiones de Raspberry Pi |
+
+✅ Este método es compatible con Raspberry Pi 3B (no 3B+).
+
+---
 ## Requisitos
 
 - **Raspberry Pi 3B**
