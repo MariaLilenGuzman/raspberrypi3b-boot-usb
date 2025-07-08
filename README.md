@@ -12,7 +12,7 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 3. [Descargar Raspberry Pi OS](#descargar-raspberry-pi-os)
 4. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
 5. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
-6. [Clonar la microSD al disco externo](#clonar-la-microsd-al-disco-externo)
+6. [Observaciones](#observaciones)
 7. [Notas y recomendaciones](#notas-y-recomendaciones)
 
 ---
@@ -126,7 +126,84 @@ En mi caso, descargo la versión para **Windows**.
     17:3020000a
     ```
     
-    Significa que el USB boot mode ya está habilitado.
+    Significa que el USB boot mode ya está habilitado. Ahora se puede iniciar desde cualquier usb.
+
+## Observaciones
+
+Si al ejecutar el siguiente comando:
+
+    ```bash
+    vcgencmd otp_dump | grep 17:
+
+Obtenés el siguiente resultado:
+    ```text
+    17:1020000a
+    ```
+Significa que el arranque desde USB todavía no está habilitado.
+
+1. Verificar el archivo config.txt
+Abrí el archivo de configuración:
+    ```bash
+    sudo nano /boot/config.txt
+    ```
+En cualquier parte del archivo (preferentemente al final), debe aparecer esta línea exactamente:
+
+
+
+
+
+
+
+
+
+
+Si luego de ejecutar el comando:
+    ```bash
+    vcgencmd otp_dump | grep 17:
+    ```
+Obtenemos 
+    ```text
+    17:1020000a
+    ```
+Debemos fijarnos si esta correcto 
+sudo nano /boot/config.txt
+En cualquier parte (al final está bien) debe estar exactamente:
+
+program_usb_boot_mode=1
+👉 Asegurate de que no tenga # delante (si tiene # está comentado y no se ejecuta).
+Guardá con Ctrl + O, salí con Ctrl + X.
+
+📌 2️⃣ Reiniciá de nuevo
+A veces el bit no se graba si no apagás completamente:
+
+Después de reiniciar, apagá la Pi por completo (sudo poweroff) y desenchufá la fuente unos segundos.
+
+Volvé a encender.
+
+Después, verificá de nuevo:
+vcgencmd otp_dump | grep 17:
+
+si sigue dando 
+```text
+    17:1020000a
+    ```
+hacemos lo siguiente
+echo program_usb_boot_mode=1 | sudo tee -a /boot/firmware/config.txt
+
+esto agrega la linea "program_usb_boot_mode=1" al archivo config.txt que está en el directorio /boot/firmware/
+
+reinicio
+sudo reboot
+
+abro de nuevo la terminal y escribo
+vcgencmd otp_dump | grep 17:
+ Si devuelve:
+    ```text
+    17:3020000a
+    ```
+    
+    Significa que el USB boot mode ya está habilitado. Ahora se puede iniciar desde cualquier usb.
+este paso fue el que me funciono a mi
 
 
 
