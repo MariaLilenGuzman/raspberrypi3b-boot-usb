@@ -77,3 +77,18 @@ En mi caso, descargo la versión para **Windows**.
 7. Una vez completada, reinicie el dispositivo.
     ```bash
     sudo reboot
+8. Verifica que el arranque por USB esté habilitado:
+    ```bash
+    vcgencmd otp_dump | grep 17:
+    ```
+
+    Si devuelve:
+    ```text
+    17:3020000a
+    ```
+
+    Significa que el USB boot mode ya está habilitado.
+
+
+
+
