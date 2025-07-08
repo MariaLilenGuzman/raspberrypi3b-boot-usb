@@ -89,6 +89,26 @@ En mi caso, descargo la versión para **Windows**.
 
     Significa que el USB boot mode ya está habilitado.
 
+9. Si no está habilitado, actívalo agregando esta línea al archivo config.txt:
+    ```bash
+    echo program_usb_boot_mode=1 | sudo tee -a /boot/config.txt
+
+10. Reinicia la Raspberry Pi:
+    ```bash
+    sudo reboot
+
+11. Verifica nuevamente:
+    ```bash
+    vcgencmd otp_dump | grep 17:
+    ```
+    
+    Si devuelve:
+    ```text
+    17:3020000a
+    ```
+    
+    Significa que el USB boot mode ya está habilitado.
+
 
 
 
