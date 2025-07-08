@@ -33,7 +33,10 @@ Descargo el **Raspberry Pi Imager** desde la web oficial:
 👉 [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/)  
 
 En mi caso, descargo la versión para **Windows**.  
-📸 *(Se recomienda incluir una captura de pantalla del sitio oficial para referencia).*
+<p align="center">
+  <img src="images/img1.png" alt="captura de pantalla de web" width="800" height="700"/>
+</p>
+
 
 ---
 
