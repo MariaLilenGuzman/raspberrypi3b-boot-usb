@@ -8,12 +8,12 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 ## 📑 Tabla de contenido
 
 1. [Requisitos](#requisitos)
-2. [Descargar Raspberry Pi OS](#-descargar-raspberry-pi-os)
-3. [Grabar Raspberry Pi OS en la microSD](#-grabar-raspberry-pi-os-en-la-microsd)
-4. [Preparar el disco externo](#-preparar-el-disco-externo)
-5. [Habilitar arranque por USB](#-habilitar-arranque-por-usb)
-6. [Clonar la microSD al disco externo](#-clonar-la-microsd-al-disco-externo)
-7. [Notas y recomendaciones](#-notas-y-recomendaciones)
+2. [Descargar Raspberry Pi OS](#descargar-raspberry-pi-os)
+3. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
+4. [Preparar el disco externo](#preparar-el-disco-externo)
+5. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
+6. [Clonar la microSD al disco externo](#clonar-la-microsd-al-disco-externo)
+7. [Notas y recomendaciones](#notas-y-recomendaciones)
 
 ---
 
@@ -27,7 +27,7 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 
 ---
 
-## 📥 Descargar Raspberry Pi OS
+## Descargar Raspberry Pi OS
 
 Descargo el **Raspberry Pi Imager** desde la web oficial:  
 👉 [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/)  
@@ -40,7 +40,7 @@ En mi caso, descargo la versión para **Windows**.
 
 ---
 
-## 💾 Grabar Raspberry Pi OS en la microSD
+## Grabar Raspberry Pi OS en la microSD
 
 1. Inserto la **microSD de 16 GB** en la PC.
 2. Abro **Raspberry Pi Imager** y selecciono:  
@@ -52,16 +52,7 @@ En mi caso, descargo la versión para **Windows**.
 
 ---
 
-## 💽 Preparar el disco externo
-
-> **Nota:** El disco debe estar vacío o sin datos importantes, ya que será formateado.
-
-Normalmente, Raspberry Pi Imager formatea y configura las particiones automáticamente (FAT32 para `/boot` y ext4 para `/`).  
-Si vas a clonar la microSD al disco externo, se recomienda que el disco esté conectado a un **hub USB alimentado** para evitar problemas de energía.
-
----
-
-## 🔧 Habilitar arranque por USB
+## Habilitar arranque por USB
 
 1. Arranco la Raspberry Pi usando la microSD.
 2. Actualizo el sistema:
