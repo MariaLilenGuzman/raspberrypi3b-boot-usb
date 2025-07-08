@@ -10,10 +10,9 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 1. [Requisitos](#requisitos)
 2. [Descargar Raspberry Pi OS](#descargar-raspberry-pi-os)
 3. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
-4. [Preparar el disco externo](#preparar-el-disco-externo)
-5. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
-6. [Clonar la microSD al disco externo](#clonar-la-microsd-al-disco-externo)
-7. [Notas y recomendaciones](#notas-y-recomendaciones)
+4. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
+5. [Clonar la microSD al disco externo](#clonar-la-microsd-al-disco-externo)
+6. [Notas y recomendaciones](#notas-y-recomendaciones)
 
 ---
 
