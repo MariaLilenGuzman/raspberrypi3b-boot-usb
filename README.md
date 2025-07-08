@@ -58,7 +58,22 @@ En mi caso, descargo la versión para **Windows**.
 
 ## Habilitar arranque por USB
 
-1. Arranco la Raspberry Pi usando la microSD.
-2. Actualizo el sistema:
+1. Arranca la Raspberry Pi usando la microSD.
+2. Abre una terminal.
+3. Antes de actualizar, verifique el espacio en disco de su dispositivo. Ejecute el siguiente comando:
+    ```bash
+    df -h
+  👉 Esto te muestra el espacio libre para asegurarte de que hay suficiente para actualizar.
+  
+4. Actualiza la lista de paquetes:
    ```bash
-   sudo apt update && sudo apt full-upgrade -y
+   sudo apt update
+5. Actualiza todos los paquetes del sistema:
+   ```bash
+    sudo apt full-upgrade
+  📌 Nota: El comando te mostrará cuánto espacio se necesita. Pulsa "y" cuando lo solicite para aceptar y continuar.
+  
+6. Espera a que finalice la actualización.
+7. Una vez completada, reinicie el dispositivo.
+    ```bash
+    sudo reboot
