@@ -13,7 +13,7 @@ Este repositorio documenta los pasos que seguí para configurar una **Raspberry 
 4. [Grabar Raspberry Pi OS en la microSD](#grabar-raspberry-pi-os-en-la-microsd)
 5. [Habilitar arranque por USB](#habilitar-arranque-por-usb)
 6. [Observaciones](#observaciones)
-7. [Notas y recomendaciones](#notas-y-recomendaciones)
+
 
 ---
 
