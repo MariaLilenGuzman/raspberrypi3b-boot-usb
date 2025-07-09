@@ -131,14 +131,13 @@ En mi caso, descargo la versión para **Windows**.
 ## Observaciones
 
 Si al ejecutar el siguiente comando:
-
-    ```bash
-    vcgencmd otp_dump | grep 17:
-
+```bash
+vcgencmd otp_dump | grep 17:
+```
 Obtenés el siguiente resultado:
-    ```text
-    17:1020000a
-    ```
+```text
+17:1020000a
+```
 Significa que el arranque desde USB todavía no está habilitado.
 
 1. Verificar el archivo config.txt
@@ -146,64 +145,62 @@ Abrí el archivo de configuración:
     ```bash
     sudo nano /boot/config.txt
     ```
-En cualquier parte del archivo (preferentemente al final), debe aparecer esta línea exactamente:
+    En cualquier parte del archivo (preferentemente al final), debe aparecer esta línea exactamente:
+    ```text
+    program_usb_boot_mode=1
+    ```
+    📌 Asegurate de que no tenga un # delante (si lo tiene, está comentada y no se ejecutará).
 
+      Guardá los cambios con Ctrl + O, presioná Enter, y salí con Ctrl + X.
 
+2. Reiniciar y apagar completamente
+A veces el bit OTP no se graba con un simple reinicio. Por eso, después de reiniciar, se recomienda apagar completamente:
+      ```bash
+      sudo reboot
+      ```
 
-
-
-
-
-
-
-
-Si luego de ejecutar el comando:
+    Esperá que arranque, y luego:
+      ```bash
+      sudo poweroff
+      ```
+    Desenchufá la Raspberry Pi de la corriente durante unos segundos, y luego volvé a encenderla.
+3. Verificar nuevamente
+Una vez encendida, abrí la terminal y ejecutá otra vez:
     ```bash
     vcgencmd otp_dump | grep 17:
     ```
-Obtenemos 
-    ```text
-    17:1020000a
+    Si sigue mostrando:
+      ```text
+      17:1020000a
+      ```
+
+   Podés intentar una alternativa que en mi caso fue la que funcionó:
+5. Modificar /boot/firmware/config.txt
+Agregá la línea de habilitación al archivo de configuración alternativo:
     ```
-Debemos fijarnos si esta correcto 
-sudo nano /boot/config.txt
-En cualquier parte (al final está bien) debe estar exactamente:
-
-program_usb_boot_mode=1
-👉 Asegurate de que no tenga # delante (si tiene # está comentado y no se ejecuta).
-Guardá con Ctrl + O, salí con Ctrl + X.
-
-📌 2️⃣ Reiniciá de nuevo
-A veces el bit no se graba si no apagás completamente:
-
-Después de reiniciar, apagá la Pi por completo (sudo poweroff) y desenchufá la fuente unos segundos.
-
-Volvé a encender.
-
-Después, verificá de nuevo:
-vcgencmd otp_dump | grep 17:
-
-si sigue dando 
-```text
-    17:1020000a
+    echo program_usb_boot_mode=1 | sudo tee -a /boot/firmware/config.txt
     ```
-hacemos lo siguiente
-echo program_usb_boot_mode=1 | sudo tee -a /boot/firmware/config.txt
+    Esto agregará correctamente la instrucción a /boot/firmware/config.txt, que es el archivo que algunas versiones del sistema utilizan en lugar de /boot/config.txt
 
-esto agrega la linea "program_usb_boot_mode=1" al archivo config.txt que está en el directorio /boot/firmware/
-
-reinicio
-sudo reboot
-
-abro de nuevo la terminal y escribo
-vcgencmd otp_dump | grep 17:
- Si devuelve:
-    ```text
-    17:3020000a
+5. Reiniciar y verificar
+Reiniciá la Raspberry Pi:
+    ```bash
+    sudo reboot
     ```
-    
-    Significa que el USB boot mode ya está habilitado. Ahora se puede iniciar desde cualquier usb.
-este paso fue el que me funciono a mi
+    Después del reinicio, verificá nuevamente:
+      ```bash
+      vcgencmd otp_dump | grep 17:
+      ```
+    Si esta vez devuelve:
+      ```text
+      17:3020000a
+      ```
+✅ ¡Listo! El arranque desde USB está habilitado permanentemente. Ahora podés iniciar el sistema desde cualquier dispositivo USB sin necesidad de una microSD.
+
+💡 Este último método fue el que me funcionó personalmente, luego de que la modificación del archivo /boot/config.txt no tuviera efecto.
+
+
+
 
 
 
